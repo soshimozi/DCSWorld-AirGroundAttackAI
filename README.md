@@ -2,12 +2,12 @@
 
 #### AirGroundAttackTask(FlightName, Target, WeaponType, ExpendQty, Dive, OffsetAngle, ClimbAngle, PopAlt, AttackDist, Reattack)
 
-|FlightName	             |"Aerial-1"         |Group name of flight that is tasked to attack                     |
-| ---------------------- | ----------------- | -------------------------------------------                      |
-
-|Target                  |Foo                |Bar                                                               |
-| ---------------------- | ----------------- | -------------------------------------------                      |
-
-| Weapon Type            |                   | Weapon type for the attack                                       |
-|----------------------- | ------------------| --------------------------------------------                     |
-| - Option 1             | "Auto"            | Automatic weapon type selection (not: might lead to gun strafing)|
+<table>
+  <tr><th>Flight Name</th><th>"Aerial-1"</th><th>Group name of flight that is tasked to attack</th>
+  <tr>
+    <td width="20%">Target</td><td width="30%"></td><td>Four types of ground targets can be attacked (vehicles/ships, static objects, scenery objects, parked aircraft/helicopters)</td>
+  </tr>
+  <tr>
+    <td>-Option 1</td><td>"Ground-1"</td><td>Vehicles/Ships: Group name of vehicle or ship group</td>
+  </tr>
+</table>
