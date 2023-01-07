@@ -26,15 +26,15 @@ AirGroundAttackTask(FlightName, Target, WeaponType, ExpendQty, Dive, OffsetAngle
 
 <table cellpadding="1" cellspacing="1" border="1">
   <tr><th>Flight Name</th><th>"Aerial-1"</th><th>Group name of flight that is tasked to attack</th>
-  <tr valign="center">
-    <td width="12%">
+  <tr>
+    <td>
       <p>Target</p>
       <p>-Option 1</p>
       <p>-Option 2</p>
       <p>-Option 3</p>
       <p>-Option 4</p>
     </td>
-    <td width="30%">
+    <td>
       <p> &nbsp; </p>
       <p>"Ground-1"</p>
       <p>{"StaticName-1", "StaticName-2", "StaticName-N"}</p>
@@ -73,7 +73,150 @@ AirGroundAttackTask(FlightName, Target, WeaponType, ExpendQty, Dive, OffsetAngle
    <td>
     <p>Weapon type for the attack</p>
     <p>Automatic weapon type selection (note: might lead to gun strafing)</p>
+    <p>Attack with gun</p>
+    <p>Attack with unguided rockets</p>
+    <p>Attack with unguided bombs</p>
+    <p>Attack with guided bombs</p>
+    <p>Attack with guided missiles</p>
+    <p>Alternatively, the internal DCS code for certain weapon types or combinations of weapon types may be entered as a number</p>
    </td>
+ </tr>
+ <tr>
+  <td>
+   <p>ExpendQty</p>
+   <p>-Option 1</p>
+   <p>-Option 2</p>
+   <p>-Option 3</p>
+   <p>-Option 4</p>
+   <p>-Option 5</p>
+   <p>-Option 6</p>
+   <p>-Option 7</p>   
+  </td>
+  <td>
+   <p> &nbsp; </p>
+   <p>"Auto"</p>
+   <p>"One"</p>
+   <p>"Two"</p>
+   <p>"Four"</p>
+   <p>"Quarter"</p>
+   <p>"Half"</p>
+   <p>"All"</p>
+  </td>
+  <td>
+   <p>Number of weapons to be expended per attack run</p>
+   <p>Automatic selection of number of weapons to be expended</p>
+   <p>Expend one weapon</p>
+   <p>Expend two weapons</p>
+   <p>Expend four weapons</p>
+   <p>Expend 1/4 of weapons carried per type</p>
+   <p>Expend 1/2 of weapons carried per type</p>
+   <p>Expend all weapons carried per type</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>Dive</p>
+   <p>-Option 1</p>
+   <p>-Option 2</p>
+   <p>-Option 3</p>
+  </td>
+  <td>
+   <p> &nbsp; </p>
+   <p>true</p>
+   <p>false</p>
+   <p>nil</p>
+  </td>
+  <td>
+   <p>Whether a dive attack is performed</p>
+   <p>Perform a dive attack (when possible)</p>
+   <p>Perform a level attack (when possible)</p>
+   <p>Perform a level attack (when possible)</p>   
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>OffsetAngle</p>
+   <p>-Option 1</p>
+   <p>-Option 2</p>
+   <p>-Option 3</p>   
+  </td>
+  <td>
+   <p> &nbsp; </p>
+   <p>number</p>
+   <p>0</p>
+   <p>nil</p>
+  </td>
+  <td>
+   <p>Offset turn to side prior to pop-up maneuver</p>
+   <p>Angle in degrees of offset turn (enter positive number only, offset side is determined by egress geometry)</p>
+   <p>Do not perform an offset turn</p>
+   <p>Do not perform an offset turn</p>   
+  </td>
+ </tr>
+ <tr>
+  <td>ClimbAngle</td>
+  <td>number</td>
+  <td>The climb angle in degrees for any pop-up climb (climb angles smaller than 15 are not possible)</td>
+ </tr>
+ <tr>
+  <td>
+   <p>PopAlt</p>
+   <p>-Option 1</p>
+   <p>-Option 2</p>
+   <p>-Option 3</p>   
+  </td>
+  <td>
+   <p> &nbsp;</p>
+   <p>number</p>
+   <p>nil</p>
+   <p>nil</p>   
+  </td>
+  <td>
+   <p>Pop-up maneuver prior to attack</p>
+   <p>Height in meters above target to which a pop-up shall be performed</p>
+   <p>Do not perform a pop-up maneuver</p>
+   <p>Do not perform a pop-up maneuver</p>   
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>AttackDist</p>
+   <p>-Option 1</p>
+   <p>-Option 2</p>
+   <p>-Option 3</p>   
+  </td>
+  <td>
+   <p> &nbsp;</p>
+   <p>number</p>
+   <p>nil</p>
+   <p>nil</p>   
+  </td>
+  <td>
+<p>Distance from target where a pop-up maneuver shall be completed (if no pop-up maneuver is performed, this is ignored and attacks will be initiated immediately)</p>
+<p>Distance in meters (useful to set a specific distance for weapons with stand-off range such as missiles and heavy rockets)</p>
+<p>When attacking with bombs, the distance will be calculated automatically in order to keep to pop-up as short as possible</p>
+<p>When attacking with rockets, a generic distance is selected automatically that works with the most common rocket types</p>   
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>Reattack</p>
+   <p>-Option 1</p>
+   <p>-Option 2</p>
+   <p>-Option 3</p>   
+  </td>
+  <td>
+   <p> &nbsp; </p>
+   <p>true</p>
+   <p>false</p>
+   <p>nil</p>   
+  </td>
+  <td>
+   <p>Whether aircraft egress after the first attack or return for subsequent attacks</p>
+   <p>Repeat attacks as long as weapons and targets remain</p>
+   <p>Egress after first attack</p>
+   <p>Egress after first attack</p>   
+  </td>
  </tr>
 </table>
 
