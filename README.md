@@ -18,13 +18,15 @@ alt="Single Player Missions"/></a>
 
 * Include the “AirGroundAttackScript.lua” with a "Do Script File" trigger in your mission.
 * At the waypoint where you want your flight start the attack, under Advanced Waypoint Actions, add a Run Script action. Insert the following code to this action:
-#### AirGroundAttackTask(FlightName, Target, WeaponType, ExpendQty, Dive, OffsetAngle, ClimbAngle, PopAlt, AttackDist, Reattack)
+```lua 
+AirGroundAttackTask(FlightName, Target, WeaponType, ExpendQty, Dive, OffsetAngle, ClimbAngle, PopAlt, AttackDist, Reattack)
+```
 
 
 
 <table cellpadding="1" cellspacing="1" border="1">
   <tr><th>Flight Name</th><th>"Aerial-1"</th><th>Group name of flight that is tasked to attack</th>
-  <tr>
+  <tr valign="center">
     <td width="12%">
       <p>Target</p>
       <p>-Option 1</p>
@@ -32,15 +34,47 @@ alt="Single Player Missions"/></a>
       <p>-Option 3</p>
       <p>-Option 4</p>
     </td>
-    <td width="33%">
+    <td width="30%">
       <p> &nbsp; </p>
       <p>"Ground-1"</p>
       <p>{"StaticName-1", "StaticName-2", "StaticName-N"}</p>
       <p>{{x = 123, y = 123},{x = 456, y = 456}}</p>
       <p>{x = 123, y=123}</p>
     </td>
-    <td>Four types of ground targets can be attacked (vehicles/ships, static objects, scenery objects, parked aircraft/helicopters)</td>
+    <td>
+     <p>Four types of ground targets can be attacked (vehicles/ships, static objects, scenery objects, parked aircraft/helicopters)</p>
+     <p>Vehicles/Ships: Group name of vehicle or ship group</p>
+     <p>Static Objects: Object name of static object, listed in {} (a single static objects also needs {} ).</p>
+     <p>Scenery Objects: x-/y-coordinate of scenery object in {}, listed in {} (a single scenery objects needs double {{}} ).</p>
+     <p>Parked aircraft or helicopters: x-/y-coordinate in {}. Stationary aircraft or helicopters within 5000 m of this coordinate will be attacked.</p>
+    </td>
   </tr>
+  <tr>
+   <td>
+    <p>WeaponType</p>
+    <p>-Option 1</p>
+    <p>-Option 2</p>
+    <p>-Option 3</p>
+    <p>-Option 4</p>
+    <p>-Option 5</p>
+    <p>-Option 6</p>
+    <p>-Option 7</p>
+   </td>
+  <td>
+   <p> &nbsp; </p>
+   <p>"Auto"</p>
+   <p>"Cannon"</p>
+   <p>"Rockets"</p>
+   <p>"Bombs"</p>
+   <p>"Guided bombs"</p>
+   <p>"ASM"</p>
+   <p>number<p>
+  </td>
+   <td>
+    <p>Weapon type for the attack</p>
+    <p>Automatic weapon type selection (note: might lead to gun strafing)</p>
+   </td>
+ </tr>
 </table>
 
 Notes and known issues:
